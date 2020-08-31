@@ -12,16 +12,16 @@ namespace PromotionEngineProject.Models
             switch (product)
             {
                 case (ProductMap.A):
-                    price = ProductPrice.A;
+                    price = PromotionA.A;
                     break;
                 case (ProductMap.B):
-                    price = ProductPrice.B;
+                    price = PromotionB.B;
                     break;
                 case (ProductMap.C):
-                    price = ProductPrice.C;
+                    price = PromotionCD.C;
                     break;
                 case (ProductMap.D):
-                    price = ProductPrice.D;
+                    price = PromotionCD.D;
                     break;
                 default:
                     break;

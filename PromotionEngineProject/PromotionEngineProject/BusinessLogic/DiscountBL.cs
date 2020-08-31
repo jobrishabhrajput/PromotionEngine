@@ -11,12 +11,12 @@ namespace PromotionEngineProject.BusinessLogic
             int discountedTotal = 0;
             if (inquiry.TryGetValue("A", out int quantA))
             {
-                discountedTotal = quantA / 3 * ProductPrice.A3 + (quantA % 3) * ProductPrice.A;
+                discountedTotal = quantA / 3 * PromotionA.A3 + (quantA % 3) * PromotionA.A;
             }
 
             if (inquiry.TryGetValue("B", out int quantB))
             {
-                discountedTotal += ((quantB / 2) * ProductPrice.B2) + ((quantB % 2) * ProductPrice.B);
+                discountedTotal += ((quantB / 2) * PromotionB.B2) + ((quantB % 2) * PromotionB.B);
             }
 
             if (inquiry.TryGetValue("C", out int quantC) && inquiry.TryGetValue("D", out int quantD))
@@ -24,21 +24,21 @@ namespace PromotionEngineProject.BusinessLogic
                 if (quantC <= quantD)
                 {
                     quantD = quantD - quantC;
-                    discountedTotal += quantC * ProductPrice.CD;
-                    discountedTotal += quantD * ProductPrice.D;
+                    discountedTotal += quantC * PromotionCD.CD;
+                    discountedTotal += quantD * PromotionCD.D;
                 }
                 else
                 {
                     quantC = quantC - quantD;
-                    discountedTotal += quantD * ProductPrice.CD;
-                    discountedTotal += quantC * ProductPrice.C;
+                    discountedTotal += quantD * PromotionCD.CD;
+                    discountedTotal += quantC * PromotionCD.C;
                 }
             }
             else
             {
                 inquiry.TryGetValue("D", out int quantityD);
-                discountedTotal += quantC * ProductPrice.C;
-                discountedTotal += quantityD * ProductPrice.D;
+                discountedTotal += quantC * PromotionCD.C;
+                discountedTotal += quantityD * PromotionCD.D;
             }
 
             return discountedTotal;
