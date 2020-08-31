@@ -14,7 +14,7 @@ namespace PromotionEngineProject.Models
 
         public static int C = 20;
         public static int D = 15;
-        public static int CD = 130;
+        public static int CD = 30;
     }
 
     public enum ProductMap

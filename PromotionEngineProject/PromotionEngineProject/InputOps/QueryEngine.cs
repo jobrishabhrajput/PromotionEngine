@@ -27,8 +27,8 @@ namespace PromotionEngineProject
                 foreach (var elem in inquiry)
                 {
                     var price = product.GetPrice((ProductMap)Enum.Parse(typeof(ProductMap), elem.Key, true), elem.Value);
-                    Console.WriteLine("Quoted price for product " + elem.Key + " : " + );
-                    total += total + price;
+                    Console.WriteLine("Quoted price for product " + elem.Key + " : " + price);
+                    total += price;
                 }
                 Console.WriteLine("Total Price for your Product List is " + total);
 
